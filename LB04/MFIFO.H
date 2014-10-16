@@ -41,7 +41,35 @@ private:
 
 };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class Console
+{
+public:
+    void OutPut()
+    {
+        ;
+    }
+private:
+    void virtualOImp()
+    {
+        ;
+    }
 
+};
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class PrettyConsole
+{
+public:
+
+private:
+    void virtualOImp()
+    {
+        ;
+    }
+
+};
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class MFifo
 {
 public:

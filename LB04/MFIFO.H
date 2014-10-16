@@ -40,8 +40,21 @@ private:
     Item *end;
 
 };
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class Console
+class PrettyConsole
+{
+public:
+
+private:
+    void virtualOImp()
+    {
+        ;
+    }
+
+};
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class Console: public PrettyConsole
 {
 public:
     void OutPut()
@@ -55,22 +68,8 @@ private:
     }
 
 };
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class PrettyConsole
-{
-public:
-
-private:
-    void virtualOImp()
-    {
-        ;
-    }
-
-};
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class MFifo
+class MFifo:public Console
 {
 public:
     MFifo();

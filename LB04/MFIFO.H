@@ -2,8 +2,6 @@
 #define MFIFO_H
 namespace FIFO
 {
-class Implementation;
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Item
 {
 public:
@@ -21,23 +19,63 @@ private:
     Item &operator=(const Item &rhs);
 };
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class MFifo
+
+class Implementation
 {
 public:
-    MFifo();
-    ~MFifo();
+    Implementation();
+    ~Implementation();
     void PutItem(const int data);
     int GetItem();
     int PeekItem(const  int index = 0);
     int GetItems();
-    void Clear() ;
-    void massItems();
+    void Clear();
     int massItems1();
+    Implementation(const Implementation &object);
+    Implementation &operator=(const Implementation &rhs);
 
 private:
     int items;
     Item *begin;
     Item *end;
+
+};
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+class MFifo
+{
+public:
+    MFifo();
+    ~MFifo();
+    void PutItem(const int data)
+    {
+        pimpl->PutItem(data);
+    }
+    int GetItem()
+    {
+        pimpl->GetItem();
+    }
+    int PeekItem(const int index = 0)
+    {
+        pimpl->PeekItem(index = 0);
+    }
+    int GetItems()
+    {
+        pimpl->GetItems();
+    }
+    void Clear()
+    {
+        pimpl->Clear();
+    }
+    int massItems1()
+    {
+        pimpl->massItems1();
+    }
+
+private:
+    //int items;
+    //Item *begin;
+    //Item *end;
     MFifo(const MFifo &orig):pimpl(nullptr)
     {
         pimpl=new Implementation(*(orig.pimpl));
@@ -50,17 +88,7 @@ private:
     class Implementation *pimpl;
 };
 
-class Implementation
-{
-public:
-    Implementation();
-    ~Implementation();
-    Implementation(const Implementation &object);
-    Implementation &operator=(const Implementation &rhs);
 
-private:
-
-};
 
 
 

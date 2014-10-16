@@ -42,7 +42,7 @@ MFifo::~MFifo()
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-void MFifo::Clear()
+void Implementation::Clear()
 {
     while(items)
     {
@@ -66,7 +66,7 @@ void MFifo::Clear()
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-void MFifo::PutItem(const int data)
+void Implementation::PutItem(const int data)
 {
     Item *item = new Item();
 
@@ -88,7 +88,7 @@ void MFifo::PutItem(const int data)
     items ++;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int MFifo::GetItem()
+int Implementation::GetItem()
 {
     if(!items)  return 0;
 
@@ -96,7 +96,7 @@ int MFifo::GetItem()
     return  item ->getData();
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int MFifo::PeekItem(const int index)
+int Implementation::PeekItem(const int index)
 {
     if(items <= index)  return 0;
 
@@ -107,12 +107,12 @@ int MFifo::PeekItem(const int index)
     return item -> getData();
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-int MFifo::GetItems()
+int Implementation::GetItems()
 {
     return items;
 }
 
-void MFifo:: massItems()
+void Implementation:: massItems()
 {
 
     int numElements;
@@ -137,7 +137,7 @@ void MFifo:: massItems()
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-int MFifo:: massItems1()
+int Implementation:: massItems1()
 {
 
     int numElements;
